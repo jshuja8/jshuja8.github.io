@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO: replace [Surname] everywhere (title, meta, header, footer) -->
   <title>Junaid Shuja — Computer Science, SEMO</title>
-  <meta name="description" content="Junaid [Surname], Assistant Professor of Computer Science at Southeast Missouri State University. Research in machine learning for computer networks, cloud and edge computing, cybersecurity, and AI-assisted software engineering education.">
-  <meta property="og:title" content="Junaid [Surname] — Computer Science, SEMO">
+  <meta name="description" content="Junaid Shuja, Assistant Professor of Computer Science at Southeast Missouri State University. Research in machine learning for computer networks, cloud and edge computing, cybersecurity, and AI-assisted software engineering education.">
+  <meta property="og:title" content="Junaid Shuja — Computer Science, SEMO">
   <meta property="og:description" content="Machine learning for networks, cloud and edge computing, cybersecurity, and AI-assisted software engineering education.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239E1B32'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23fff'%3EJ%3C/text%3E%3C/svg%3E">
@@ -157,6 +156,11 @@
     /* ---------- Footer ---------- */
     footer { padding: 2rem 0 3rem; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
 
+    .meta b { font-weight: 600; color: var(--ink); white-space: nowrap; }
+    .content h3.sub { font-family: var(--sans); font-size: 0.85rem; font-weight: 600; color: var(--muted); margin: 2.25rem 0 0.9rem; }
+    .content > h3.sub:first-child { margin-top: 0; }
+    .dated .desc { margin-top: 0.35rem; }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 52rem) {
       .hero .wrap { grid-template-columns: 1fr; }
@@ -180,13 +184,14 @@
 
   <header class="site-head">
     <div class="wrap">
-      <a class="brand" href="#top">Junaid <mark class="todo">[Surname]</mark></a>
+      <a class="brand" href="#top">Junaid Shuja</a>
       <nav class="nav" aria-label="Sections">
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#teaching">Teaching</a>
         <a href="#grants">Grants</a>
         <a href="#experience">Experience</a>
+        <a href="#talks">Talks</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -197,10 +202,10 @@
     <div class="hero" id="top">
       <div class="wrap">
         <div>
-          <p class="hero-who"><strong>Assistant Professor of Computer Science</strong><br>Southeast Missouri State University</p>
+          <p class="hero-who"><strong>Dr. Junaid Shuja</strong>, Assistant Professor of Computer Science<br>Southeast Missouri State University</p>
           <!-- Positioning statement: edit freely, keep it to one sentence -->
           <h1>I build machine learning for networked systems, and I study how AI can make students better software engineers rather than more dependent ones.</h1>
-          <p class="lede">My work spans cloud and edge computing, intrusion detection, and AI-assisted software engineering education. In the classroom I run project-based courses where students design, build, and ship real software.</p>
+          <p class="lede">My research spans edge and cloud computing, deep reinforcement learning for computation offloading, IoT and blockchain security, and AI-assisted software engineering education. I have taught for more than 11 years, across 21+ courses, and hold a Ph.D. with distinction from the University of Malaya.</p>
           <ul class="hero-links">
             <li><a href="cv.pdf">Curriculum vitae (PDF)</a></li>
             <li><a href="#publications">Publications</a></li>
@@ -210,11 +215,8 @@
 
         <figure class="topo" aria-hidden="true">
           <svg viewBox="0 0 300 220" role="img">
-            <!-- links -->
             <path class="link" d="M40 170 L120 110 L210 60 M120 110 L230 160 M210 60 L230 160"/>
-            <!-- highlighted route edge → cloud → classroom -->
             <path id="route" class="path" d="M40 170 L120 110 L210 60 L230 160"/>
-            <!-- nodes -->
             <circle class="node" cx="40" cy="170" r="7"/>
             <circle class="node" cx="120" cy="110" r="7"/>
             <circle class="node" cx="210" cy="60" r="7"/>
@@ -223,7 +225,6 @@
             <text x="120" y="96" text-anchor="end" dx="-10">Network</text>
             <text x="210" y="42" text-anchor="middle">Cloud</text>
             <text x="230" y="188" text-anchor="middle">Classroom</text>
-            <!-- one packet, one trip, on load -->
             <circle class="packet" r="4">
               <animateMotion dur="3.2s" begin="0.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.25 1">
                 <mpath href="#route"/>
@@ -240,13 +241,13 @@
       <div class="wrap">
         <h2 id="h-research">Research</h2>
         <div class="content">
-          <p>My foundational work sits where machine learning meets computer networks. More recently I have turned the same empirical lens on how generative AI changes the way software engineering is taught and how research itself is reviewed.</p>
+          <p>My foundational work sits where machine learning meets computer networks, going back to my doctoral work on offloading for mobile cloud computing. More recently I have turned the same empirical lens on how generative AI changes the way software engineering is taught and how research itself is reviewed.</p>
           <ul class="themes">
-            <li><b>AI-assisted software engineering education</b><span>A Human-Grounded AI-Assisted framework for teaching software engineering, piloted and measured across multiple semesters of CS445.</span></li>
-            <li><b>Machine learning for computer networks</b><span>Learning-based approaches to traffic analysis, resource management, and anomaly detection.</span></li>
-            <li><b>Cloud and edge computing</b><span>Offloading, orchestration, and fog/edge architectures for latency-sensitive and IoT workloads.</span></li>
-            <li><b>Cybersecurity</b><span>Intrusion detection systems and ML-driven threat detection, including federated approaches for IoT.</span></li>
-            <li><b>AI and research integrity</b><span>Whether AI-generated peer reviews can be told apart from human ones, and whether they deserve trust.</span></li>
+            <li><b>AI-assisted software engineering education</b><span>A Human-Grounded AI-Assisted framework that sequences manual and AI-assisted learning, piloted and measured across multiple semesters of CS445.</span></li>
+            <li><b>Edge computing and computation offloading</b><span>Deep reinforcement learning (Dueling DQN, PPO) and neural approaches for offloading decisions in mobile edge and vehicular networks.</span></li>
+            <li><b>Federated learning and intelligent IoT</b><span>Federated learning for digital-twin vehicular networks, and UAV- and IoT-assisted monitoring architectures.</span></li>
+            <li><b>Security and blockchain</b><span>Lightweight encryption for IoT, tamper detection in sensor networks, and blockchain frameworks for traceability and trusted records.</span></li>
+            <li><b>AI and research integrity</b><span>Telling authentic, generic, and AI-generated peer reviews apart, and asking whether AI-written reviews deserve trust.</span></li>
           </ul>
           <p style="margin-top:1.5rem"><a href="#contact">Interested in working together?</a> I welcome inquiries from students and collaborators in any of these areas.</p>
         </div>
@@ -258,36 +259,53 @@
       <div class="wrap">
         <h2 id="h-pubs">Selected publications</h2>
         <div class="content">
-          <!-- TODO: confirm author lists and venues; add DOIs as papers come out -->
-          <ul class="entries">
+          <ul class="entries pubs">
             <li>
-              <span class="entry-title">Human-Grounded AI-Assisted Software Engineering Education: An Empirical Study of Learning Outcomes</span>
-              <span class="status live">In press</span>
-              <div class="meta">J. <mark class="todo">Shuja</mark>, A. Saha, <mark class="todo">[co-authors]</mark>. Springer, <mark class="todo">[conference name]</mark></div>
-              <p class="desc">A two-semester classroom study in which mean assignment scores rose from roughly 54% to 78% after structured, human-first AI integration.</p>
+              <span class="entry-title">Beyond Detection: Do AI-Generated Peer Reviews Deserve Our Trust? A Manuscript-Matched Comparison Across Two Venues</span>
+              <span class="status">Under review</span>
+              <div class="meta"><b>J. Shuja</b> with J. Ara. Special issue on Human Factors in Generative AI: Trust, Usability, and Responsible Adoption.</div>
             </li>
             <li>
               <span class="entry-title">Applications of Machine Learning for EEG-Based Neurological Disorders: A Review, Taxonomy, and Comparative Analysis</span>
               <span class="status">Under review</span>
-              <div class="meta">A. Saha, J. <mark class="todo">[Surname]</mark>, et al. <mark class="todo">[confirm order]</mark>. Cluster Computing</div>
+              <div class="meta"><b>J. Shuja</b> with A. Saha and co-authors. Cluster Computing.</div>
             </li>
             <li>
-              <span class="entry-title">Beyond Detection: Do AI-Generated Peer Reviews Deserve Our Trust? A Manuscript-Matched Comparison Across Two Venues</span>
-              <span class="status">Under review</span>
-              <div class="meta"><mark class="todo">[Jannat surname]</mark>, J. <mark class="todo">[Surname]</mark>. Special issue on Human Factors in Generative AI</div>
+              <span class="entry-title">Human-Grounded AI-Assisted Software Engineering Education: An Empirical Study of Learning Outcomes</span>
+              <div class="meta"><b>J. Shuja</b>, A. Saha. International Conference on Software Engineering of Emerging Technologies (SEET), Behrend, PA, 2026.</div>
+              <p class="desc">A two-semester classroom study in which mean assignment scores rose from roughly 54% to 78% after structured, human-first AI integration.</p>
             </li>
             <li>
-              <span class="entry-title">A Document-Aware Multi-Agent LLM Framework for Trading on the Pakistan Stock Exchange</span>
-              <span class="status">In preparation</span>
-              <div class="meta"><mark class="todo">[authors. working title]</mark></div>
+              <span class="entry-title">Classifying Scientific Peer Reviews: Distinguishing Authentic, Generic, and AI-Generated Feedback</span>
+              <div class="meta">A. Aftab, J. Ara, A. Humayun, K. Malik, <b>J. Shuja</b>. IEEE International Conference on Future Machine Learning and Data Science (FMLDS), Los Angeles, 2025.</div>
             </li>
-            <!-- TODO: add earlier peer-reviewed papers (ML for networks, edge/cloud, IDS) -->
             <li>
-              <span class="entry-title"><mark class="todo">[Earlier paper title]</mark></span>
-              <div class="meta"><mark class="todo">[authors. venue. year]</mark></div>
+              <span class="entry-title">Deep Reinforcement Learning with Dueling DQN for Partial Computation Offloading in Mobile Edge Computing</span>
+              <div class="meta">E. Mustafa, <b>J. Shuja</b>, F. Rehman, et al. IEEE Access, vol. 13, 2025.</div>
+            </li>
+            <li>
+              <span class="entry-title">Computation Offloading in Vehicular Communications using PPO-Based Deep Reinforcement Learning</span>
+              <div class="meta">E. Mustafa, <b>J. Shuja</b>, F. Rehman, et al. The Journal of Supercomputing, vol. 81, 2025.</div>
+            </li>
+            <li>
+              <span class="entry-title">Lightweight Image Encryption Scheme for IoT Environment and Machine Learning-Driven Robust S-Box Selection</span>
+              <div class="meta">A. Shafique, A. Mehmood, M. Alawida, A. N. Khan, <b>J. Shuja</b>. Telecommunication Systems, vol. 88, 2025.</div>
+            </li>
+            <li>
+              <span class="entry-title">Neural Networks Meet Computation Offloading in Mobile Edge Networks: Applications, Taxonomy, and Open Issues</span>
+              <div class="meta">E. Mustafa, <b>J. Shuja</b>, F. Rehman, et al. Journal of Network and Computer Applications, vol. 226, 2024.</div>
+            </li>
+            <li>
+              <span class="entry-title">Federated Learning for Digital Twin-Based Vehicular Networks: Architecture and Challenges</span>
+              <div class="meta">L. U. Khan, E. Mustafa, <b>J. Shuja</b>, et al. IEEE Wireless Communications, vol. 31, no. 2, 2024.</div>
+            </li>
+            <li>
+              <span class="entry-title">Performance Assessment of Dynamic Analysis Based Energy Estimation Tools</span>
+              <span class="status live">Best paper award</span>
+              <div class="meta">R. W. Ahmad, S. H. Ab Hamid, A. Gani, M. S. Obaidat, <b>J. Shuja</b>, et al. International Symposium on Performance Evaluation of Computer and Telecommunication Systems (SPECTS), France, 2018.</div>
             </li>
           </ul>
-          <p style="margin-top:1.25rem">Full list on <a href="#" data-todo="scholar">Google Scholar</a>.</p>
+          <p style="margin-top:1.25rem">Full list on <a href="https://scholar.google.com/citations?user=tWRIBtoAAAAJ&amp;hl=en">Google Scholar</a>.</p>
         </div>
       </div>
     </section>
@@ -297,33 +315,38 @@
       <div class="wrap">
         <h2 id="h-teaching">Teaching</h2>
         <div class="content">
-          <p>I teach systems, security, cloud, and software engineering. My courses are project-based: students learn by building, and AI tools are introduced deliberately, after the fundamentals, not instead of them.</p>
+          <p>I teach systems, networks, security, cloud, and software engineering, and I am a Cisco-certified CCNA Instructor and AWS Academy Educator. My courses are project-based: students learn by building, and AI tools are introduced deliberately, after the fundamentals, not instead of them.</p>
           <ul class="entries">
             <li>
               <span class="entry-title">CS445 Software Engineering</span>
               <p class="desc">A semester-long team project course covering requirements, UML design, testing, and delivery. Home of the Human-Grounded AI-Assisted framework.</p>
             </li>
             <li>
-              <span class="entry-title"><mark class="todo">[CS ###]</mark> Operating Systems</span> <span class="status">Online</span>
+              <span class="entry-title">Operating Systems</span> <span class="status">Online</span>
               <p class="desc">Processes, scheduling, memory management, concurrency, and file systems.</p>
             </li>
             <li>
-              <span class="entry-title">CY440 AWS Cloud Foundations</span>
+              <span class="entry-title">CY440 Cloud Computing (AWS Cloud Foundations)</span>
               <p class="desc">Core cloud concepts and services, taught with AWS Academy curriculum and hands-on labs.</p>
+            </li>
+            <li>
+              <span class="entry-title">Web Development and Security</span>
+              <p class="desc">Building web applications and defending them against common attacks.</p>
             </li>
             <li>
               <span class="entry-title">Intrusion Detection Systems</span>
               <p class="desc">Signature- and anomaly-based detection, network monitoring, and ML-driven IDS, within the cybersecurity curriculum.</p>
             </li>
             <li>
+              <span class="entry-title">Computer Networks</span>
+              <p class="desc">Redesigned around active learning and gamification at Universiti Teknologi PETRONAS, published in the 2024 TLIF proceedings.</p>
+            </li>
+            <li>
               <span class="entry-title">Generative AI</span> <span class="status live">New course in development</span>
               <p class="desc">A twelve-module course on foundation models, transformers, and building with generative AI responsibly.</p>
             </li>
-            <li>
-              <span class="entry-title">Graduate Network Security</span> <span class="status live">In development</span>
-              <p class="desc">A hands-on graduate course built around realistic attack-and-defend labs.</p>
-            </li>
           </ul>
+          <p style="margin-top:1.25rem">I also run professional training, including a short course on data visualization and analysis for machine learning in Python for UTP's Centre for Advanced and Professional Education.</p>
         </div>
       </div>
     </section>
@@ -333,17 +356,71 @@
       <div class="wrap">
         <h2 id="h-grants">Grants and honors</h2>
         <div class="content">
+          <h3 class="sub">Current</h3>
           <ul class="entries">
             <li>
-              <span class="entry-title">Gerald S. McDougall Endowed Fellowship</span>
-              <div class="meta">Southeast Missouri State University. <mark class="todo">[year]</mark></div>
-              <p class="desc">“Empowering Faculty through AI,” a train-the-trainer initiative delivering six AI-literacy workshops to Harrison College of Business and Computing faculty in Fall 2026.</p>
+              <span class="entry-title">Applying machine learning to classify valid reviews in the peer-review process</span>
+              <div class="meta">PI. SEMO Grants and Research Funding Committee, 2025–26</div>
             </li>
             <li>
-              <span class="entry-title">Summer grant, AI-integrated curriculum</span>
-              <div class="meta">Southeast Missouri State University. <mark class="todo">[year]</mark></div>
-              <p class="desc"><mark class="todo">[one line on scope]</mark></p>
+              <span class="entry-title">AI-Integrated Software Engineering Curriculum and Assessment</span>
+              <div class="meta">PI. Southeast Missouri State University, 2026</div>
             </li>
+            <li>
+              <span class="entry-title">Gerald S. McDougall Endowed Fellowship</span>
+              <div class="meta">Southeast Missouri State University</div>
+              <p class="desc">“Empowering Faculty through AI,” a train-the-trainer initiative delivering six AI-literacy workshops to Harrison College of Business and Computing faculty in Fall 2026.</p>
+            </li>
+          </ul>
+
+          <h3 class="sub">Submitted</h3>
+          <ul class="entries">
+            <li>
+              <span class="entry-title">CAREER: Human-Grounded AI-Assisted Software Engineering Education: An Empirical Framework for Sequencing Manual and AI-Assisted Learning</span>
+              <div class="meta">PI. National Science Foundation</div>
+            </li>
+            <li>
+              <span class="entry-title">CyberAI SFS: Building a CyberAI Workforce Pipeline through Integrated Scholarship, Research, and Government Service at SEMO</span>
+              <div class="meta">Co-PI. National Science Foundation</div>
+            </li>
+            <li>
+              <span class="entry-title">Collaborative Research: CyberTraining: Pilot: Advanced Generative-AI Training in Healthcare Domains</span>
+              <div class="meta">PI. National Science Foundation</div>
+            </li>
+            <li>
+              <span class="entry-title">GuardReview: A Locally Deployable Multi-Agent System for AI-Generated Text Detection in Scientific Peer Review</span>
+              <div class="meta">PI. Amazon Research</div>
+            </li>
+          </ul>
+
+          <h3 class="sub">Completed</h3>
+          <ul class="entries">
+            <li>
+              <span class="entry-title">Prototype for blockchain-enabled land record management</span>
+              <div class="meta">PI. Universiti Teknologi PETRONAS, 2023–24</div>
+            </li>
+            <li>
+              <span class="entry-title">Immutable port logistics using blockchain technology</span>
+              <div class="meta">Co-PI. Deanship of Scientific Research, University of Jeddah, 2023–24</div>
+            </li>
+            <li>
+              <span class="entry-title">Deep learning to predict COVID-19 infection from blood markers and chest CT images</span>
+              <div class="meta">Consultant. Ministry of Health, Saudi Arabia, 2020</div>
+            </li>
+            <li>
+              <span class="entry-title">Smart application for COVID-19 tracing</span>
+              <div class="meta">Consultant. Ministry of Health, Saudi Arabia, 2020</div>
+            </li>
+            <li>
+              <span class="entry-title">Establishment of a Mobile Cloud Computing Lab</span>
+              <div class="meta">PI. Higher Education Commission (HEC), Pakistan, 2017–19</div>
+            </li>
+          </ul>
+
+          <h3 class="sub">Honors</h3>
+          <ul class="entries">
+            <li><span class="entry-title">Best paper award</span><div class="meta">SPECTS 2018, France</div></li>
+            <li><span class="entry-title">Ph.D. with distinction and Graduate on Time award</span><div class="meta">University of Malaya, BrightSpark scholar</div></li>
           </ul>
         </div>
       </div>
@@ -356,33 +433,90 @@
         <div class="content">
           <ul class="entries dated">
             <li>
-              <div class="when"><mark class="todo">[year]</mark> – present</div>
+              <div class="when">2025 – present</div>
               <div>
-                <span class="entry-title">Assistant Professor of Computer Science</span>
+                <span class="entry-title">Assistant Professor of Computer Science (tenure-track)</span>
                 <div class="meta">Southeast Missouri State University, Cape Girardeau, Missouri</div>
               </div>
             </li>
-            <!-- TODO: add previous academic / industry positions, newest first -->
             <li>
-              <div class="when"><mark class="todo">[years]</mark></div>
+              <div class="when">2024 – 2025</div>
               <div>
-                <span class="entry-title"><mark class="todo">[Previous position]</mark></span>
-                <div class="meta"><mark class="todo">[Institution, location]</mark></div>
+                <span class="entry-title">Visiting Associate Professor</span>
+                <div class="meta">Southeast Missouri State University, Cape Girardeau, Missouri</div>
               </div>
             </li>
             <li>
-              <div class="when"><mark class="todo">[year]</mark></div>
+              <div class="when">2023 – 2024</div>
               <div>
-                <span class="entry-title">Ph.D., <mark class="todo">[field]</mark></span>
-                <div class="meta"><mark class="todo">[University, country]</mark></div>
+                <span class="entry-title">Senior Lecturer / Assistant Professor</span>
+                <div class="meta">Universiti Teknologi PETRONAS, Malaysia</div>
+                <p class="desc">Taught networks, cloud computing, and web development; supervised research, final-year projects, and technopreneurship.</p>
+              </div>
+            </li>
+            <li>
+              <div class="when">2017 – 2023</div>
+              <div>
+                <span class="entry-title">Assistant Professor of Computer Science</span>
+                <div class="meta">COMSATS University, Pakistan</div>
+              </div>
+            </li>
+            <li>
+              <div class="when">2013 – 2017</div>
+              <div>
+                <span class="entry-title">Ph.D., Computer Science (Distributed Systems / Mobile Cloud)</span>
+                <div class="meta">University of Malaya, Malaysia</div>
+                <p class="desc">Thesis: Integrated Vector Instruction Translator and Offloading Framework for Mobile Cloud Computing.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TALKS & SERVICE ================= -->
+    <section class="block" id="talks" aria-labelledby="h-talks">
+      <div class="wrap">
+        <h2 id="h-talks">Talks and service</h2>
+        <div class="content">
+          <ul class="entries dated">
+            <li>
+              <div class="when">June 2026</div>
+              <div>
+                <span class="entry-title">AI Integration in Software Engineering Education: Impacts and Outcomes</span>
+                <div class="meta">Speaker. NAIRR Pilot Classroom Expansion Conference, Orlando</div>
+              </div>
+            </li>
+            <li>
+              <div class="when">May 2026</div>
+              <div>
+                <span class="entry-title">The Role of AI in Peer Review</span>
+                <div class="meta">Invited speaker. Intl. Conference on Intelligent Systems, Blockchain, and Communication Technologies, Central Michigan University</div>
+              </div>
+            </li>
+            <li>
+              <div class="when">Sept 2023</div>
+              <div>
+                <span class="entry-title">Keynote</span>
+                <div class="meta">International Conference on Emerging Trends and Applications in Artificial Intelligence (ICETAI), Istanbul</div>
+              </div>
+            </li>
+            <li>
+              <div class="when">Sept 2023</div>
+              <div>
+                <span class="entry-title">Invited talk</span>
+                <div class="meta">Information Systems Postgraduate Research Talk Series, Institut Teknologi Sepuluh Nopember, Indonesia</div>
               </div>
             </li>
           </ul>
 
-          <h3>Service</h3>
+          <h3 class="sub">Service</h3>
           <ul class="entries">
-            <li><span class="entry-title">Founding faculty lead, AWS Cloud Club at SEMO</span><p class="desc">Connecting students with AWS training in cloud, AI/ML, generative AI, and security.</p></li>
-            <li><span class="entry-title">Peer reviewer</span><p class="desc">Journals and conferences in cloud, edge and fog computing, and applied machine learning. <mark class="todo">[list venues]</mark></p></li>
+            <li><span class="entry-title">General Chair</span><div class="meta">5th International Conference on Advanced Engineering, Technology and Applications, Cape Girardeau, 2026</div></li>
+            <li><span class="entry-title">PhD Forum and Posters Chair</span><div class="meta">10th International Conference on Fog and Mobile Edge Computing (FMEC), Tampa, 2025</div></li>
+            <li><span class="entry-title">Organizing committee and session chair</span><div class="meta">ACM Southeast Conference (ACMSE), Southeast Missouri State University, 2025</div></li>
+            <li><span class="entry-title">Technical Program Chair, then Publication and Publicity Chair</span><div class="meta">IEEE International Conference on AI, Blockchain, and IoT (AIBThings), Central Michigan University, 2023–2025</div></li>
+            <li><span class="entry-title">Founding faculty lead, AWS Cloud Club at SEMO</span><div class="meta">Connecting students with AWS training in cloud, AI/ML, generative AI, and security</div></li>
           </ul>
         </div>
       </div>
@@ -393,7 +527,7 @@
       <div class="wrap">
         <h2 id="h-contact">Contact</h2>
         <div class="content">
-          <p>The fastest way to reach me is email: <a href="mailto:EMAIL@semo.edu"><mark class="todo">[email]@semo.edu</mark></a></p>
+          <p>The fastest way to reach me is email: <a href="mailto:jshuja@semo.edu">jshuja@semo.edu</a></p>
           <div class="routes">
             <div>
               <h3>Students</h3>
@@ -401,20 +535,15 @@
             </div>
             <div>
               <h3>Collaborators</h3>
-              <p>Open to joint work on ML for networks, edge security, and AI in computing education.</p>
+              <p>Open to joint work on edge intelligence, network and IoT security, and AI in computing education.</p>
             </div>
             <div>
               <h3>Workshops and talks</h3>
-              <p>I run AI-literacy workshops for faculty and speak on AI in software engineering education.</p>
+              <p>I run AI-literacy workshops for faculty and professional training in machine learning with Python.</p>
             </div>
           </div>
-          <!-- TODO: paste real profile URLs; delete any you don't use -->
           <ul class="profiles">
-            <li><a href="#">Google Scholar</a></li>
-            <li><a href="#">ORCID</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">SEMO faculty page</a></li>
+            <li><a href="https://scholar.google.com/citations?user=tWRIBtoAAAAJ&amp;hl=en">Google Scholar</a></li>
           </ul>
         </div>
       </div>
@@ -422,7 +551,7 @@
   </main>
 
   <footer>
-    <div class="wrap">© <span id="yr">2026</span> Junaid <mark class="todo">[Surname]</mark>. Department of Computer Science, Southeast Missouri State University</div>
+    <div class="wrap">© <span id="yr">2026</span> Junaid Shuja. Department of Computer Science, Southeast Missouri State University</div>
   </footer>
 
   <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
