@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- TODO: replace [Surname] everywhere (title, meta, header, footer) -->
+  <title>Junaid [Surname] — Computer Science, SEMO</title>
+  <meta name="description" content="Junaid [Surname], Assistant Professor of Computer Science at Southeast Missouri State University. Research in machine learning for computer networks, cloud and edge computing, cybersecurity, and AI-assisted software engineering education.">
+  <meta property="og:title" content="Junaid [Surname] — Computer Science, SEMO">
+  <meta property="og:description" content="Machine learning for networks, cloud and edge computing, cybersecurity, and AI-assisted software engineering education.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239E1B32'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' text-anchor='middle' fill='%23fff'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Tokens ---------- */
+    :root {
+      --paper: #F5F6F3;
+      --ink: #1B2229;
+      --muted: #5A6570;
+      --rule: #D5DAD6;
+      --tint: #E8ECEA;
+      --accent: #9E1B32;      /* crimson, a nod to SEMO red */
+      --accent-soft: #F3E3E6;
+      --todo: #FFF3B0;
+
+      --serif: "Literata", Georgia, "Times New Roman", serif;
+      --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      --measure: 40rem;
+      --rail: 11rem;
+      --gap: clamp(1.5rem, 4vw, 3.5rem);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper: #14181C;
+        --ink: #E7EAE8;
+        --muted: #9AA5AE;
+        --rule: #2C343B;
+        --tint: #1C2227;
+        --accent: #E0697E;
+        --accent-soft: #3A1F25;
+        --todo: #5A4E12;
+      }
+    }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      line-height: 1.68;
+      font-optical-sizing: auto;
+    }
+    a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+    a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+    mark.todo { background: var(--todo); color: inherit; padding: 0 0.15em; border-radius: 2px; }
+    .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: 0.5rem 1rem; z-index: 10; }
+    .skip:focus { left: 1rem; top: 1rem; }
+
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 2.5rem); }
+
+    /* ---------- Header ---------- */
+    .site-head {
+      position: sticky; top: 0; z-index: 5;
+      background: color-mix(in srgb, var(--paper) 92%, transparent);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .site-head .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-top: 0.9rem; padding-bottom: 0.9rem; }
+    .brand { font-weight: 600; font-size: 1.05rem; text-decoration: none; white-space: nowrap; }
+    .nav { font-family: var(--sans); font-size: 0.9rem; display: flex; gap: 1.25rem; overflow-x: auto; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { text-decoration: none; color: var(--muted); white-space: nowrap; }
+    .nav a:hover { color: var(--ink); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(2.5rem, 6vw, 4.5rem); border-bottom: 1px solid var(--rule); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: var(--gap); align-items: center; }
+    .hero-who { font-family: var(--sans); font-size: 0.95rem; color: var(--muted); margin: 0 0 1.25rem; }
+    .hero-who strong { color: var(--ink); font-weight: 600; }
+    .hero h1 {
+      font-weight: 400;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.012em;
+      margin: 0 0 1.5rem;
+      max-width: 22ch;
+    }
+    .hero p.lede { margin: 0 0 1.75rem; max-width: 36rem; color: var(--muted); }
+    .hero-links { font-family: var(--sans); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+    .hero-links a { font-weight: 500; }
+
+    /* topology figure: the one memorable element */
+    .topo { width: 100%; max-width: 22rem; justify-self: end; }
+    .topo svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .topo .link { stroke: var(--rule); stroke-width: 1.5; fill: none; }
+    .topo .path { stroke: var(--accent); stroke-width: 1.5; fill: none; stroke-dasharray: 4 5; opacity: 0.55; }
+    .topo .node { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+    .topo .node.hot { fill: var(--accent); stroke: var(--accent); }
+    .topo text { font-family: var(--sans); font-size: 12px; fill: var(--muted); }
+    .topo .packet { fill: var(--accent); }
+    .topo figcaption { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.5; }
+    @media (prefers-reduced-motion: reduce) { .topo .packet { display: none; } }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: clamp(2.5rem, 6vw, 4rem) 0; border-bottom: 1px solid var(--rule); scroll-margin-top: 4rem; }
+    section.block .wrap { display: grid; grid-template-columns: var(--rail) minmax(0, var(--measure)); gap: var(--gap); }
+    section.block h2 {
+      font-family: var(--sans); font-size: 0.95rem; font-weight: 600;
+      color: var(--ink); margin: 0.35rem 0 0;
+      position: sticky; top: 5rem; align-self: start;
+    }
+    .content > :first-child { margin-top: 0; }
+    .content p { margin: 0 0 1.1rem; }
+    .content h3 { font-size: 1.12rem; font-weight: 600; margin: 2rem 0 0.6rem; line-height: 1.35; }
+
+    /* research themes */
+    .themes { list-style: none; margin: 1.5rem 0 0; padding: 0; display: grid; gap: 1.4rem; }
+    .themes li { padding-left: 1.1rem; border-left: 2px solid var(--rule); }
+    .themes li:first-child { border-left-color: var(--accent); }
+    .themes b { display: block; font-weight: 600; }
+    .themes span { color: var(--muted); }
+
+    /* entries: publications, teaching, experience */
+    .entries { list-style: none; margin: 0; padding: 0; }
+    .entries > li { padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+    .entries > li:first-child { border-top: 0; padding-top: 0; }
+    .entry-title { font-weight: 500; }
+    .meta { font-family: var(--sans); font-size: 0.87rem; color: var(--muted); margin-top: 0.25rem; }
+    .status {
+      display: inline-block; font-family: var(--sans); font-size: 0.76rem; font-weight: 500;
+      padding: 0.08rem 0.5rem; border-radius: 999px; margin-left: 0.35rem; vertical-align: 0.12em;
+      background: var(--tint); color: var(--muted);
+    }
+    .status.live { background: var(--accent-soft); color: var(--accent); }
+    .entries .desc { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.98rem; }
+
+    /* dated rows (experience) */
+    .dated > li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; }
+    .dated .when { font-family: var(--sans); font-size: 0.87rem; color: var(--muted); padding-top: 0.2rem; }
+
+    /* contact routing */
+    .routes { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.5rem 2rem; margin: 1.5rem 0 0; }
+    .routes h3 { font-family: var(--sans); font-size: 0.95rem; margin: 0 0 0.35rem; }
+    .routes p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .profiles { font-family: var(--sans); font-size: 0.92rem; list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+
+    /* ---------- Footer ---------- */
+    footer { padding: 2rem 0 3rem; font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 52rem) {
+      .hero .wrap { grid-template-columns: 1fr; }
+      .topo { justify-self: start; max-width: 19rem; }
+      section.block .wrap { grid-template-columns: 1fr; gap: 1rem; }
+      section.block h2 { position: static; font-size: 1.05rem; }
+    }
+    @media (max-width: 34rem) {
+      body { font-size: 1rem; }
+      .brand { font-size: 0.98rem; }
+      .site-head .wrap { flex-direction: column; gap: 0.35rem; }
+      .nav { width: 100%; gap: 1rem; }
+      .dated > li { grid-template-columns: 1fr; gap: 0.15rem; }
+      .topo { max-width: 15rem; }
+      .nav { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="#top">Junaid <mark class="todo">[Surname]</mark></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#grants">Grants</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <div class="hero" id="top">
+      <div class="wrap">
+        <div>
+          <p class="hero-who"><strong>Assistant Professor of Computer Science</strong><br>Southeast Missouri State University</p>
+          <!-- Positioning statement: edit freely, keep it to one sentence -->
+          <h1>I build machine learning for networked systems, and I study how AI can make students better software engineers rather than more dependent ones.</h1>
+          <p class="lede">My work spans cloud and edge computing, intrusion detection, and AI-assisted software engineering education. In the classroom I run project-based courses where students design, build, and ship real software.</p>
+          <ul class="hero-links">
+            <li><a href="cv.pdf">Curriculum vitae (PDF)</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Get in touch</a></li>
+          </ul>
+        </div>
+
+        <figure class="topo" aria-hidden="true">
+          <svg viewBox="0 0 300 220" role="img">
+            <!-- links -->
+            <path class="link" d="M40 170 L120 110 L210 60 M120 110 L230 160 M210 60 L230 160"/>
+            <!-- highlighted route edge → cloud → classroom -->
+            <path id="route" class="path" d="M40 170 L120 110 L210 60 L230 160"/>
+            <!-- nodes -->
+            <circle class="node" cx="40" cy="170" r="7"/>
+            <circle class="node" cx="120" cy="110" r="7"/>
+            <circle class="node" cx="210" cy="60" r="7"/>
+            <circle class="node hot" cx="230" cy="160" r="8"/>
+            <text x="40" y="196" text-anchor="middle">Edge</text>
+            <text x="120" y="96" text-anchor="end" dx="-10">Network</text>
+            <text x="210" y="42" text-anchor="middle">Cloud</text>
+            <text x="230" y="188" text-anchor="middle">Classroom</text>
+            <!-- one packet, one trip, on load -->
+            <circle class="packet" r="4">
+              <animateMotion dur="3.2s" begin="0.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.25 1">
+                <mpath href="#route"/>
+              </animateMotion>
+            </circle>
+          </svg>
+          <figcaption>From packets at the edge to projects in the classroom: the thread running through my research and teaching.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- ================= RESEARCH ================= -->
+    <section class="block" id="research" aria-labelledby="h-research">
+      <div class="wrap">
+        <h2 id="h-research">Research</h2>
+        <div class="content">
+          <p>My foundational work sits where machine learning meets computer networks. More recently I have turned the same empirical lens on how generative AI changes the way software engineering is taught and how research itself is reviewed.</p>
+          <!-- TODO: tailor each theme line to your actual papers -->
+          <ul class="themes">
+            <li><b>AI-assisted software engineering education</b><span>A Human-Grounded AI-Assisted framework for teaching software engineering, piloted and measured across multiple semesters of CS445.</span></li>
+            <li><b>Machine learning for computer networks</b><span>Learning-based approaches to traffic analysis, resource management, and anomaly detection.</span></li>
+            <li><b>Cloud and edge computing</b><span>Offloading, orchestration, and fog/edge architectures for latency-sensitive and IoT workloads.</span></li>
+            <li><b>Cybersecurity</b><span>Intrusion detection systems and ML-driven threat detection, including federated approaches for IoT.</span></li>
+            <li><b>AI and research integrity</b><span>Whether AI-generated peer reviews can be told apart from human ones, and whether they deserve trust.</span></li>
+          </ul>
+          <p style="margin-top:1.5rem"><a href="#contact">Interested in working together?</a> I welcome inquiries from students and collaborators in any of these areas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PUBLICATIONS ================= -->
+    <section class="block" id="publications" aria-labelledby="h-pubs">
+      <div class="wrap">
+        <h2 id="h-pubs">Selected publications</h2>
+        <div class="content">
+          <!-- TODO: confirm author lists and venues; add DOIs as papers come out -->
+          <ul class="entries">
+            <li>
+              <span class="entry-title">Human-Grounded AI-Assisted Software Engineering Education: An Empirical Study of Learning Outcomes</span>
+              <span class="status live">In press</span>
+              <div class="meta">J. <mark class="todo">[Surname]</mark>, A. Saha, <mark class="todo">[co-authors]</mark>. Springer, <mark class="todo">[conference name]</mark></div>
+              <p class="desc">A two-semester classroom study in which mean assignment scores rose from roughly 54% to 78% after structured, human-first AI integration.</p>
+            </li>
+            <li>
+              <span class="entry-title">Applications of Machine Learning for EEG-Based Neurological Disorders: A Review, Taxonomy, and Comparative Analysis</span>
+              <span class="status">Under review</span>
+              <div class="meta">A. Saha, J. <mark class="todo">[Surname]</mark>, et al. <mark class="todo">[confirm order]</mark>. Cluster Computing</div>
+            </li>
+            <li>
+              <span class="entry-title">Beyond Detection: Do AI-Generated Peer Reviews Deserve Our Trust? A Manuscript-Matched Comparison Across Two Venues</span>
+              <span class="status">Under review</span>
+              <div class="meta"><mark class="todo">[Jannat surname]</mark>, J. <mark class="todo">[Surname]</mark>. Special issue on Human Factors in Generative AI</div>
+            </li>
+            <li>
+              <span class="entry-title">A Document-Aware Multi-Agent LLM Framework for Trading on the Pakistan Stock Exchange</span>
+              <span class="status">In preparation</span>
+              <div class="meta"><mark class="todo">[authors. working title]</mark></div>
+            </li>
+            <!-- TODO: add earlier peer-reviewed papers (ML for networks, edge/cloud, IDS) -->
+            <li>
+              <span class="entry-title"><mark class="todo">[Earlier paper title]</mark></span>
+              <div class="meta"><mark class="todo">[authors. venue. year]</mark></div>
+            </li>
+          </ul>
+          <p style="margin-top:1.25rem">Full list on <a href="#" data-todo="scholar">Google Scholar</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEACHING ================= -->
+    <section class="block" id="teaching" aria-labelledby="h-teaching">
+      <div class="wrap">
+        <h2 id="h-teaching">Teaching</h2>
+        <div class="content">
+          <p>I teach systems, security, cloud, and software engineering. My courses are project-based: students learn by building, and AI tools are introduced deliberately, after the fundamentals, not instead of them.</p>
+          <ul class="entries">
+            <li>
+              <span class="entry-title">CS445 Software Engineering</span>
+              <p class="desc">A semester-long team project course covering requirements, UML design, testing, and delivery. Home of the Human-Grounded AI-Assisted framework.</p>
+            </li>
+            <li>
+              <span class="entry-title"><mark class="todo">[CS ###]</mark> Operating Systems</span> <span class="status">Online</span>
+              <p class="desc">Processes, scheduling, memory management, concurrency, and file systems.</p>
+            </li>
+            <li>
+              <span class="entry-title">CY440 AWS Cloud Foundations</span>
+              <p class="desc">Core cloud concepts and services, taught with AWS Academy curriculum and hands-on labs.</p>
+            </li>
+            <li>
+              <span class="entry-title">Intrusion Detection Systems</span>
+              <p class="desc">Signature- and anomaly-based detection, network monitoring, and ML-driven IDS, within the cybersecurity curriculum.</p>
+            </li>
+            <li>
+              <span class="entry-title">Generative AI</span> <span class="status live">New course in development</span>
+              <p class="desc">A twelve-module course on foundation models, transformers, and building with generative AI responsibly.</p>
+            </li>
+            <li>
+              <span class="entry-title">Graduate Network Security</span> <span class="status live">In development</span>
+              <p class="desc">A hands-on graduate course built around realistic attack-and-defend labs.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GRANTS & HONORS ================= -->
+    <section class="block" id="grants" aria-labelledby="h-grants">
+      <div class="wrap">
+        <h2 id="h-grants">Grants and honors</h2>
+        <div class="content">
+          <ul class="entries">
+            <li>
+              <span class="entry-title">Gerald S. McDougall Endowed Fellowship</span>
+              <div class="meta">Southeast Missouri State University. <mark class="todo">[year]</mark></div>
+              <p class="desc">“Empowering Faculty through AI,” a train-the-trainer initiative delivering six AI-literacy workshops to Harrison College of Business and Computing faculty in Fall 2026.</p>
+            </li>
+            <li>
+              <span class="entry-title">Summer grant, AI-integrated curriculum</span>
+              <div class="meta">Southeast Missouri State University. <mark class="todo">[year]</mark></div>
+              <p class="desc"><mark class="todo">[one line on scope]</mark></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="block" id="experience" aria-labelledby="h-exp">
+      <div class="wrap">
+        <h2 id="h-exp">Experience</h2>
+        <div class="content">
+          <ul class="entries dated">
+            <li>
+              <div class="when"><mark class="todo">[year]</mark> – present</div>
+              <div>
+                <span class="entry-title">Assistant Professor of Computer Science</span>
+                <div class="meta">Southeast Missouri State University, Cape Girardeau, Missouri</div>
+              </div>
+            </li>
+            <!-- TODO: add previous academic / industry positions, newest first -->
+            <li>
+              <div class="when"><mark class="todo">[years]</mark></div>
+              <div>
+                <span class="entry-title"><mark class="todo">[Previous position]</mark></span>
+                <div class="meta"><mark class="todo">[Institution, location]</mark></div>
+              </div>
+            </li>
+            <li>
+              <div class="when"><mark class="todo">[year]</mark></div>
+              <div>
+                <span class="entry-title">Ph.D., <mark class="todo">[field]</mark></span>
+                <div class="meta"><mark class="todo">[University, country]</mark></div>
+              </div>
+            </li>
+          </ul>
+
+          <h3>Service</h3>
+          <ul class="entries">
+            <li><span class="entry-title">Founding faculty lead, AWS Cloud Club at SEMO</span><p class="desc">Connecting students with AWS training in cloud, AI/ML, generative AI, and security.</p></li>
+            <li><span class="entry-title">Peer reviewer</span><p class="desc">Journals and conferences in cloud, edge and fog computing, and applied machine learning. <mark class="todo">[list venues]</mark></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="block" id="contact" aria-labelledby="h-contact">
+      <div class="wrap">
+        <h2 id="h-contact">Contact</h2>
+        <div class="content">
+          <p>The fastest way to reach me is email: <a href="mailto:EMAIL@semo.edu"><mark class="todo">[email]@semo.edu</mark></a></p>
+          <div class="routes">
+            <div>
+              <h3>Students</h3>
+              <p>For course questions, use Canvas messages. For research or independent study, email me with your interests and a CV.</p>
+            </div>
+            <div>
+              <h3>Collaborators</h3>
+              <p>Open to joint work on ML for networks, edge security, and AI in computing education.</p>
+            </div>
+            <div>
+              <h3>Workshops and talks</h3>
+              <p>I run AI-literacy workshops for faculty and speak on AI in software engineering education.</p>
+            </div>
+          </div>
+          <!-- TODO: paste real profile URLs; delete any you don't use -->
+          <ul class="profiles">
+            <li><a href="#">Google Scholar</a></li>
+            <li><a href="#">ORCID</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">SEMO faculty page</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="yr">2026</span> Junaid <mark class="todo">[Surname]</mark>. Department of Computer Science, Southeast Missouri State University</div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
